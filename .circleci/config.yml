@@ -46,7 +46,7 @@ jobs:
             # Project Settings > SSH Keys > Additionl SSH Keys > Fingerprint
             - "ba:0c:38:57:24:5a:84:1e:d9:4b:c8:8a:7a:c8:24:10"
       - run:
-          name: Deploy to GitHub pages
+          name: Deploy to GitHub Pages
           command: |
             pip install --user ghp-import
             cp -R .circleci _site/

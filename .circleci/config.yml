@@ -46,13 +46,14 @@ jobs:
             # Project Settings > SSH Keys > Additionl SSH Keys > Fingerprint
             - "ba:0c:38:57:24:5a:84:1e:d9:4b:c8:8a:7a:c8:24:10"
       - run:
-          name: Deploy to github pages
+          name: Deploy to GitHub pages
           command: |
             pip install --user ghp-import
             cp -R .circleci _site/
             git config --global user.name rudi-account-service
             git config --global user.email projet-rudi@open-groupe.com
-            ghp-import --cname=doc.rudi.bzh -m "Deploy doc.rudi.bzh" --push _site
+            ghp-import -m "Deploy to GitHub pages" --push _site
+          # TODO une fois le DNS créé, l'utiliser en ajoutant le paramètre cname à ghp-import : --cname=doc.rudi.bzh
 
 workflows:
   version: 2

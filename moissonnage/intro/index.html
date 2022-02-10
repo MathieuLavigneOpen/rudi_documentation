@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+    <title>Introduction</title>
+    <meta name="description" content="Introduction" />
+
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="https://doc.data.gouv.fr/assets/css/template.css">
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="https://doc.data.gouv.fr/assets/css/main.css">
+    <link rel="canonical" href="https://doc.data.gouv.fr/moissonnage/intro/" />
+    <link rel="alternate" type="application/rss+xml" title="data.gouv.fr - documentation" href="/feed.xml" />
+</head>
+
+
+  <body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-search">
+          <title>search</title>
+          <path d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"></path>
+        </symbol>
+
+        <symbol id="icon-mail">
+          <title>mail</title>
+          <path d="M29,4l-26,0c-1.65,0 -3,1.35 -3,3l0,20c0,1.65 1.35,3 3,3l26,0c1.65,0 3,-1.35 3,-3l0,-20c0,-1.65 -1.35,-3 -3,-3Zm-16.539,13.199l-8.461,6.59l0,-15.676l8.461,9.086Zm-6.949,-9.199l20.976,0l-10.488,7.875l-10.488,-7.875l0,0Zm7.278,9.553l3.21,3.447l3.21,-3.447l6.58,8.447l-19.579,0l6.58,-8.447l-0.001,0Zm6.749,-0.354l8.461,-9.086l0,15.676l-8.461,-6.59Z"/>
+        </symbol>
+
+        <symbol id="icon-fb">
+          <title>facebook</title>
+          <path d="M29,0l-26,0c-1.65,0 -3,1.35 -3,3l0,26c0,1.65 1.35,3 3,3l13,0l0,-14l-4,0l0,-4l4,0l0,-2c0,-3.306 2.694,-6 6,-6l4,0l0,4l-4,0c-1.1,0 -2,0.9 -2,2l0,2l6,0l-1,4l-5,0l0,14l9,0c1.65,0 3,-1.35 3,-3l0,-26c0,-1.65 -1.35,-3 -3,-3Z"/>
+        </symbol>
+
+        <symbol id="icon-github">
+          <title>github</title>
+          <path d="M16,0.395c-8.836,0 -16,7.163 -16,16c0,7.069 4.585,13.067 10.942,15.182c0.8,0.148 1.094,-0.347 1.094,-0.77c0,-0.381 -0.015,-1.642 -0.022,-2.979c-4.452,0.968 -5.391,-1.888 -5.391,-1.888c-0.728,-1.849 -1.776,-2.341 -1.776,-2.341c-1.452,-0.993 0.11,-0.973 0.11,-0.973c1.606,0.113 2.452,1.649 2.452,1.649c1.427,2.446 3.743,1.739 4.656,1.33c0.143,-1.034 0.558,-1.74 1.016,-2.14c-3.554,-0.404 -7.29,-1.777 -7.29,-7.907c0,-1.747 0.625,-3.174 1.649,-4.295c-0.166,-0.403 -0.714,-2.03 0.155,-4.234c0,0 1.344,-0.43 4.401,1.64c1.276,-0.355 2.645,-0.532 4.005,-0.539c1.359,0.006 2.729,0.184 4.008,0.539c3.054,-2.07 4.395,-1.64 4.395,-1.64c0.871,2.204 0.323,3.831 0.157,4.234c1.026,1.12 1.647,2.548 1.647,4.295c0,6.145 -3.743,7.498 -7.306,7.895c0.574,0.497 1.085,1.47 1.085,2.963c0,2.141 -0.019,3.864 -0.019,4.391c0,0.426 0.288,0.925 1.099,0.768c6.354,-2.118 10.933,-8.113 10.933,-15.18c0,-8.837 -7.164,-16 -16,-16l0,0Z"/>
+        </symbol>
+
+        <symbol id="icon-rss">
+          <title>rss</title>
+          <path d="M29,0l-26,0c-1.65,0 -3,1.35 -3,3l0,26c0,1.65 1.35,3 3,3l26,0c1.65,0 3,-1.35 3,-3l0,-26c0,-1.65 -1.35,-3 -3,-3Zm-20.281,25.975c-1.5,0 -2.719,-1.206 -2.719,-2.706c0,-1.488 1.219,-2.712 2.719,-2.712c1.506,0 2.719,1.225 2.719,2.712c0,1.5 -1.219,2.706 -2.719,2.706Zm6.825,0.025c0,-2.556 -0.994,-4.962 -2.794,-6.762c-1.806,-1.806 -4.2,-2.8 -6.75,-2.8l0,-3.912c7.425,0 13.475,6.044 13.475,13.475l-3.931,0l0,-0.001Zm6.944,0c0,-9.094 -7.394,-16.5 -16.481,-16.5l0,-3.912c11.25,0 20.406,9.162 20.406,20.413l-3.925,0l0,-0.001Z"/>
+        </symbol>
+
+        <symbol id="icon-rss">
+          <title>rss</title>
+          <path id="Checked-Icon" d="M13.23,0.307l-8.118,8.197l-3.345,-3.384c-0.405,-0.408 -1.06,-0.408 -1.464,0c-0.404,0.408 -0.404,1.071 0,1.479l4.055,4.101c0.208,0.21 0.481,0.31 0.754,0.305c0.272,0.005 0.545,-0.095 0.753,-0.305l8.829,-8.915c0.404,-0.408 0.404,-1.07 0,-1.478c-0.404,-0.409 -1.06,-0.409 -1.464,0Z"/>
+        </symbol>
+
+        <symbol id="icon-twitter">
+          <title>twitter</title>
+          <path d="M32,7.075c-1.175,0.525 -2.444,0.875 -3.769,1.031c1.356,-0.813 2.394,-2.1 2.887,-3.631c-1.269,0.75 -2.675,1.3 -4.169,1.594c-1.2,-1.275 -2.906,-2.069 -4.794,-2.069c-3.625,0 -6.563,2.938 -6.563,6.563c0,0.512 0.056,1.012 0.169,1.494c-5.456,-0.275 -10.294,-2.888 -13.531,-6.862c-0.563,0.969 -0.887,2.1 -0.887,3.3c0,2.275 1.156,4.287 2.919,5.463c-1.075,-0.031 -2.087,-0.331 -2.975,-0.819c0,0.025 0,0.056 0,0.081c0,3.181 2.263,5.838 5.269,6.437c-0.55,0.15 -1.131,0.231 -1.731,0.231c-0.425,0 -0.831,-0.044 -1.237,-0.119c0.838,2.606 3.263,4.506 6.131,4.563c-2.25,1.762 -5.075,2.813 -8.156,2.813c-0.531,0 -1.05,-0.031 -1.569,-0.094c2.913,1.869 6.362,2.95 10.069,2.95c12.075,0 18.681,-10.006 18.681,-18.681c0,-0.287 -0.006,-0.569 -0.019,-0.85c1.281,-0.919 2.394,-2.075 3.275,-3.394l0,-0.001Z"/>
+        </symbol>
+
+        <symbol id="icon-googleplus">
+          <title>google +</title>
+          <path d="M29 0H3C1.35 0 0 1.35 0 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM12 24c-4.425 0-8-3.575-8-8s3.575-8 8-8c2.162 0 3.969.787 5.363 2.094l-2.175 2.088c-.594-.569-1.631-1.231-3.188-1.231-2.731 0-4.963 2.263-4.963 5.05s2.231 5.05 4.963 5.05c3.169 0 4.356-2.275 4.538-3.45h-4.537v-2.744h7.556c.069.4.125.8.125 1.325 0 4.575-3.063 7.819-7.681 7.819L12 24zm16-8h-2v2h-2v-2h-2v-2h2v-2h2v2h2v2z" fill="#fff" fill-rule="nonzero"/>
+        </symbol>
+
+        <symbol id="icon-cross">
+            <title>cross</title>
+            <path d="M10 0c5.519 0 10 4.481 10 10s-4.481 10-10 10S0 15.519 0 10 4.481 0 10 0zm3.975 7.56a4.673 4.673 0 0 0-1.535-1.535L10 8.465l-2.44-2.44A4.673 4.673 0 0 0 6.025 7.56L8.465 10l-2.44 2.44c.384.625.91 1.151 1.535 1.535l2.44-2.44 2.44 2.44a4.673 4.673 0 0 0 1.535-1.535L11.535 10l2.44-2.44z"/>
+        </symbol>
+
+        <symbol id="icon-link" viewBox="0 0 512 512">
+            <title>link</title>
+            <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/>
+        </symbol>
+      </defs>
+    </svg>
+      
+<header class="navbar">
+  <div class="navbar__container">
+    <a class="navbar__home" href="/">
+      <img class="navbar__logo" src="/assets/images/logo-marianne.svg"
+        alt="data.gouv.fr - documentation" /><span class="navbar__domain">doc</span><img src="/assets/images/pointdatagouvfr.svg" class="navbar__gouvfr" alt="gouv.fr" />
+    </a>
+    
+    <nav>
+      <ul class="nav__links">
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="hero">
+  <div class="hero__container">
+    <h1 class="hero__title">data.gouv.fr - documentation</h1>
+  </div>
+</div>
+
+<section class="documentation">
+  <nav class="side-pane" role="navigation">
+  <div class="return-datagouvfr">
+      <a href="https://www.data.gouv.fr">Revenir sur data.gouv.fr</a>
+  </div>
+  <div class="search-input-wrapper">
+    <input type="text" id="search-input" placeholder="Recherche">
+  </div>
+  <ul class="side-pane__menu">
+    
+    
+        
+        <a></a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>À propos</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/a-propos/differences-utilisateur-organisatoion/">Différences entre un utilisateur et une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/a-propos/que-publier-et-comment-le-publier/">Que publier et comment le publier</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/a-propos/signaler-un-contenu/">Signaler un contenu</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>Gestion du compte</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/gestion-du-compte/creer-un-compte/">Créer un compte</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/gestion-du-compte/supprimer-un-compte/">Supprimer un compte</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/gestion-du-compte/voir-ou-modifier-votre-compte/">Voir ou modifier votre compte</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>Jeux de données</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/demander-a-datagouvfr-de-moisonner-votre-site/">Demander à data.gouv.fr de moissonner votre site</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/difference-jeu-de-donnees-et-ressource/">Différences entre un jeu de données et une ressource</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/faire-une-recherche/">Faire une recherche</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/integrer-des-donnees/">Intégrer un jeu de données sur des sites web</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/mettre-a-jour-un-jeu-de-donnees-ou-une-ressource/">Mettre à jour un jeu de données ou une ressource</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/publier-un-jeu-de-donnees/">Publier un jeu de données</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/supprimer-un-jeu-de-donnees/">Supprimer un jeu de données ou une ressource</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/telecharger-une-ressource/">Télécharger une ressource</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/jeux-de-donnees/transferer-un-jeu-de-donnees/">Transférer un jeu de données</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>Organisation</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/ajouter-un-utilisateur-a-une-organisation/">Ajouter un utilisateur à une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/certifier-une-organisation/">Certifier une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/creer-une-organisation/">Créer une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/demander-a-rejoindre-une-organisation/">Demander à rejoindre une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/differences-administrateur-editeur-organisation/">Différences entre administrateur et éditeur d’une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/retirer-un-utilisateur-d-une-organisation/">Retirer un utilisateur d’une organisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/organisations/supprimer-une-organisation/">Supprimer une organisation</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>Réutilisations et discussions</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/reutilisations-et-discussions/associer-une-reutilisation-a-un-jeu-de-donnees/">Associer une réutilisation à un jeu de données</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/reutilisations-et-discussions/moderer-une-discussion/">Modérer une discussion</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/reutilisations-et-discussions/modifier-ou-supprimer-une-reutilisation/">Modifier ou supprimer une réutilisation</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/reutilisations-et-discussions/ouvrir-une-discussion/">Ouvrir une discussion</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>Moissonnage</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li class="active">
+                <a class="side-pane__link" href="/moissonnage/intro/">Introduction</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/moissonnage/dcat/">DCAT</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/moissonnage/ckan/">CKAN</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/moissonnage/ods/">Opendatasoft</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/moissonnage/licences/">Licences</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>Commande publique</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/commande-publique/publier-donnees-essentielles-d-attribution/">Publier les données essentielles d&#39;attribution des marchés</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/commande-publique/publier-profil-acheteur-public/">Publier un profil d’acheteur public</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+        
+        <a>API</a>
+        
+        <li class="side-pane__dropdown unfolded">
+            <ul class="side-pane__submenu">
+            
+            <li >
+                <a class="side-pane__link" href="/api/intro/">Introduction</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/api/tutoriel/">Tutoriel</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/api/dataset-workflow/">Gestion d’un jeu de données</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/api/reference/">Référence</a>
+            </li>
+            
+            <li >
+                <a class="side-pane__link" href="/api/telecharger-un-catalogue-de-donnees/">Télécharger un catalogue de données</a>
+            </li>
+            
+            </ul>
+        </li>
+        
+    
+  </ul>
+</nav>
+
+  <div class="search-results">
+    <h2>Resultats de recherche pour "<span id="search-query"></span>"</h2>
+    <div id="search-results-container"></div>
+  </div>
+  <div class="main-pane">
+    <div class="markdown">
+      <h1 id="introduction">Introduction</h1>
+
+<ul class="no_toc" id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ul>
+      <li><a href="#principe" id="markdown-toc-principe">Principe</a>        <ul>
+          <li><a href="#moissonnage-vs-api" id="markdown-toc-moissonnage-vs-api">Moissonnage vs. API</a></li>
+          <li><a href="#moissonnage-vs-geodatagouvfr" id="markdown-toc-moissonnage-vs-geodatagouvfr">Moissonnage vs. geo.data.gouv.fr</a></li>
+          <li><a href="#moissonneurs-disponibles" id="markdown-toc-moissonneurs-disponibles">Moissonneurs disponibles</a></li>
+          <li><a href="#métadonnées-communes" id="markdown-toc-métadonnées-communes">Métadonnées communes</a></li>
+        </ul>
+      </li>
+      <li><a href="#options" id="markdown-toc-options">Options</a>        <ul>
+          <li><a href="#filtrage" id="markdown-toc-filtrage">Filtrage</a>            <ul>
+              <li><a href="#portail-multiproducteur--restriction-à-une-organisation" id="markdown-toc-portail-multiproducteur--restriction-à-une-organisation">Portail multiproducteur : restriction à une organisation</a></li>
+              <li><a href="#exclusion-de-mots-clés" id="markdown-toc-exclusion-de-mots-clés">Exclusion de mots-clés</a></li>
+              <li><a href="#combinaisons-multiples" id="markdown-toc-combinaisons-multiples">Combinaisons multiples</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#rapport-de-moissonnage" id="markdown-toc-rapport-de-moissonnage">Rapport de moissonnage</a>        <ul>
+          <li><a href="#vue-synthétique" id="markdown-toc-vue-synthétique">Vue synthétique</a></li>
+          <li><a href="#détails-dun-jeu-de-données" id="markdown-toc-détails-dun-jeu-de-données">Détails d’un jeu de données</a></li>
+          <li><a href="#en-cas-derreur" id="markdown-toc-en-cas-derreur">En cas d’erreur</a></li>
+        </ul>
+      </li>
+      <li><a href="#limites" id="markdown-toc-limites">Limites</a>        <ul>
+          <li><a href="#correspondances-des-métadonnées" id="markdown-toc-correspondances-des-métadonnées">Correspondances des métadonnées</a></li>
+          <li><a href="#suppression-à-la-source" id="markdown-toc-suppression-à-la-source">Suppression à la source</a></li>
+          <li><a href="#changement-didentifiant" id="markdown-toc-changement-didentifiant">Changement d’identifiant</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="principe">Principe</h2>
+
+<p>Le moissonnage est une technique de récupération automatisée de metadonnées en “pull” : c’est le serveur data.gouv.fr qui va chercher les metadonnées sur les sites distants.</p>
+
+<p><img src="/img/moissonnage/sequence.svg" alt="Diagramme de séquence d'un moissonnage" /></p>
+
+<h3 id="moissonnage-vs-api">Moissonnage vs. API</h3>
+
+<p>La publication par l’API vous donne un contrôle total sur le contenu de chaque champ, le moment de la soumission… tandis que le moissonnage, s’il ne nécessite pas de développement spécifique sur votre plateforme, est un fonctionnement fortement contraint.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Moissonnage</th>
+      <th>API</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pré-requis</td>
+      <td>Métadonnées dans l’un des formats supportés</td>
+      <td>Capacité de développement</td>
+    </tr>
+    <tr>
+      <td>Déclenchement</td>
+      <td>Contrôlé par data.gouv.fr</td>
+      <td>Déclenché au besoin</td>
+    </tr>
+    <tr>
+      <td>Champs</td>
+      <td>Modèle imposé par protocole</td>
+      <td>Au choix du développeur</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="moissonnage-vs-geodatagouvfr">Moissonnage vs. geo.data.gouv.fr</h3>
+
+<blockquote>
+  <p>/!\ Attention: <a href="https://geo.data.gouv.fr">geo.data.gouv.fr</a> n’est plus activement maintenu. Plus d’informations à propos <a href="https://www.data.gouv.fr/fr/posts/extinction-de-geo-data-gouv-fr/">de l’extinction de geo.data.gouv.fr sont disponibles ici</a>.</p>
+</blockquote>
+
+<p>En plus du moissonnage et de l’utilisation de l’API, il existe un autre moyen automatisé de récupération des métadonnées sur data.gouv.fr : <a href="https://geo.data.gouv.fr">geo.data.gouv.fr</a>, anciennement inspire.data.gouv.fr.
+Ce site pivot permet de récupérer les métadonnées de jeux de données exposés selon <a href="https://inspire.ec.europa.eu">la directive européenne Inspire</a> (obligation légale de publication des metadonnées geographiques selon le modèle de données <strong>ISO 19115</strong>, au format de données <strong>ISO 19139</strong>).</p>
+
+<p>Ces jeux de données geospatiaux, lorsqu’ils proviennent de geo.data.gouv.fr, auront droit à une fiche de jeu de données très riche, alimentée par l’ensemble des métadonnées Inspire. Lorsque c’est le cas, il est nécessaire de s’assurer qu’ils ne remontent que par geo.data.gouv.fr et ne produisent pas de doublons. Il peut être nécessaire d’utiliser les options de filtrage de votre moissonneur ou l’option Inspire dédiée si elle existe.</p>
+
+<p><a href="https://geo.data.gouv.fr/fr/doc/publish-your-data">Vous pouvez consultez la documentation détaillée correspondante si vous êtes dans ce cas de figure.</a></p>
+
+<h3 id="moissonneurs-disponibles">Moissonneurs disponibles</h3>
+
+<p>Aujourd’hui, data.gouv.fr peut moissonner les plateformes ou formats suivants :</p>
+<ul>
+  <li><a href="/moissonnage/dcat/">DCAT</a></li>
+  <li><a href="/moissonnage/ckan/">CKAN</a></li>
+  <li><a href="/moissonnage/ckan/">DKAN, une variante du moissonneur CKAN</a></li>
+  <li><a href="/moissonnage/ods/">OpenDataSoft</a> ODS</li>
+  <li>MAAF : un moissonneur spécifique au Ministère de l’Agriculture et de l’Alimentation</li>
+</ul>
+
+<h3 id="métadonnées-communes">Métadonnées communes</h3>
+
+<p>Les jeux de données moissonnés possèdent les attributs suivants dans leur champ <code class="language-plaintext highlighter-rouge">extras</code> pour la traçabilité :</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Contenu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">harvest:domain</code></td>
+      <td>Nom de domaine moissoné</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">harvest:source_id</code></td>
+      <td>Identifiant technique du moissonneur</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">harvest:remote_id</code></td>
+      <td>Identifiant distant du jeu de données</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">harvest:last_update</code></td>
+      <td>Date du dernier moissonnage</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="options">Options</h2>
+
+<p>Chaque type de moissonneur possède des options spécifiques, ainsi que des options communes.
+Aujourd’hui, la seule option commune est la possibilité de filtrage.</p>
+
+<h3 id="filtrage">Filtrage</h3>
+
+<p>La filtrage donne la possibilité d’inclure ou d’exclure un sous-ensemble de jeux de données du moissonnage.</p>
+
+<p>Lorsqu’un ou plusieurs filtres sont déclarés, seuls les jeux de données remplissant <strong>toutes</strong> les conditions (<strong>ET</strong>) seront traités.</p>
+
+<h4 id="portail-multiproducteur--restriction-à-une-organisation">Portail multiproducteur : restriction à une organisation</h4>
+
+<p><img src="/img/moissonnage/harvest-filter-include.png" alt="Exemple de restriction à une seule organisation" /></p>
+
+<h4 id="exclusion-de-mots-clés">Exclusion de mots-clés</h4>
+
+<p><img src="/img/moissonnage/harvest-filter-exclude.png" alt="Exemple d'exclusion de mots-clés" /></p>
+
+<h4 id="combinaisons-multiples">Combinaisons multiples</h4>
+
+<p><img src="/img/moissonnage/harvest-filter-combined.png" alt="Exemple de combinaison de filtres" /></p>
+
+<h2 id="rapport-de-moissonnage">Rapport de moissonnage</h2>
+
+<p>Chaque moissonnage donne lieu à un rapport accessible depuis l’<a href="https://www.data.gouv.fr/admin/">interface d’administration de data.gouv.fr</a>.</p>
+
+<p>Il vous permet de comprendre ce qu’il se passe et, le cas échéant, de corriger les erreurs existantes.
+Il vous permettra aussi de vérifier que le filtrage se fait bien si vous en avez saisi un.</p>
+
+<h3 id="vue-synthétique">Vue synthétique</h3>
+
+<p><img src="/img/moissonnage/admin-harvest-summary.png" alt="Vue synthétique du rapport de moissonnage" /></p>
+
+<h3 id="détails-dun-jeu-de-données">Détails d’un jeu de données</h3>
+
+<p><img src="/img/moissonnage/admin-harvest-dataset-modal.png" alt="Détails d'un jeu de données du rapport de moissonnage" /></p>
+
+<h3 id="en-cas-derreur">En cas d’erreur</h3>
+
+<p><img src="/img/moissonnage/admin-harvest-dataset-error-modal.png" alt="Erreur sur un jeu de données du rapport de moissonnage" /></p>
+
+<ul>
+  <li><strong>1</strong> correspond à l’erreur <strong>technique</strong> formulée de façon compréhensible pour un humain</li>
+  <li><strong>2</strong> contient la “<strong>stacktrace</strong>” de l’erreur qui servira à ceux qui développent des moissonneurs ou contribuent aux existants.</li>
+</ul>
+
+<h2 id="limites">Limites</h2>
+
+<p>Le moissonnage n’a aucune connaissance de l’usage que vous faites du modèle de données. Il s’appuie uniquement sur les spécifications de chaque protocole ou plateforme pour récupérer les informations.</p>
+
+<p>Il y a donc certaines limitations techniques liées aux spécificités de chaque plateforme (décrites sur la page de chaque moissonneur).</p>
+
+<p>Certaines limitations sont communes et détaillées ci-dessous.</p>
+
+<h3 id="correspondances-des-métadonnées">Correspondances des métadonnées</h3>
+
+<p>Certains champs du modèle de data.gouv.fr possèdent un équivalent qui peut être sous-spécifis dans certains protocoles ou sur certaines plateformes, ou bien alors être spécifié différement, sur  plusieurs champs… Dans ce cas, la valeur du champ est récupérée en “best effort’, c’est-à-dire qu’elle va être devinée en fonction des élements à disposition.
+Se référer à la page de chaque moissonneur pour savoir lesquels sont dans ce cas pour chaque implémentation.</p>
+
+<h3 id="suppression-à-la-source">Suppression à la source</h3>
+
+<p>Pour le moment, les moissonneurs ne gèrent pas la suppression à la source et ce pour éviter les suppressions en masse par erreur, ce qui entrainerait une perte des statistiques, des discussions et des ressources communautaires de chaque jeu de données.</p>
+
+<p>Dans le cas d’une suppression ponctuelle, nous vous invitons à supprimer manuellement le jeu de données moissonné qui a perdu sa source.</p>
+
+<p>Dans le cas d’une suppression massive de jeu de données, veuillez nous contacter afin de trouver une solution satisfaisante.</p>
+
+<h3 id="changement-didentifiant">Changement d’identifiant</h3>
+
+<p>Les moissonneurs utilisent les identifiants de jeu de données distants pour retrouver leurs données entre deux moissonnages. Il est donc important de veiller à ce qu’un jeu de données conserve son identifiant au fil du temps et des modification successives. Dans le cas contraire, cela donnera lieu à la création d’un doublon.</p>
+
+<p>Il faut donc aussi veiller à ne pas supprimer puis recréer un jeu de données ou une ressource pour faire sa mise à jour.</p>
+
+      
+      <p class="edit text-center">
+          <a class="button" href="https://github.com/etalab/doc.data.gouv.fr/edit/master/articles/_moissonnage/intro.md">
+              ✎ Editer cette page
+          </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__logo">
+      <img src="/assets/images/etalab.svg" alt="Etalab">
+      
+      <ul class="footer__social">
+        
+        <li><a href="mailto:info@data.gouv.fr"><svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg></a></li>
+        
+        <li><a href="https://www.twitter.com/datagouvfr"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
+        
+        <li><a href="https://www.facebook.com/etalab"><svg class="icon icon-fb"><use xlink:href="#icon-fb"></use></svg></a></li>
+        
+        <li><a href="https://www.github.com/etalab"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a></li>
+        
+        <li><a href="https://www.data.gouv.fr/fr/datasets/recent.atom"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a></li>
+        
+      </ul>
+      
+    </div>
+    
+    <div class="footer__links">
+      
+      <h2>doc.data.gouv.fr</h2>
+      
+      <ul>
+        
+          
+            <li><a href="https://www.data.gouv.fr/">data.gouv.fr</a></li>
+          
+        
+          
+            <li><a href="https://www.data.gouv.fr/reference">Données de référence</a></li>
+          
+        
+          
+            <li><a href="https://www.data.gouv.fr/terms">Condition générales d’utilisation</a></li>
+          
+        
+          
+            <li><a href="https://support.data.gouv.fr/">Contact</a></li>
+          
+        
+      </ul>
+    </div>
+    
+    <div></div>
+  </div>
+</footer>
+
+
+    <!-- Scripts -->
+<script src="/assets/simple-jekyll-search.min.js"></script>
+<script async defer src="/assets/main.js"></script>
+
+
+  </body>
+
+</html>

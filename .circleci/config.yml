@@ -19,8 +19,7 @@ jobs:
 
       - run:
           name: Build website
-          command: bundle exec jekyll build --verbose --baseurl "/rudi_documentation"
-          # TODO en attendant d'avoir le bon DNS on ajoute un baseurl correspondant au nom du projet GitHub
+          command: bundle exec jekyll build --verbose
 
       - persist_to_workspace:
           root: .

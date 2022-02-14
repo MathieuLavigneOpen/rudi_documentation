@@ -24,10 +24,10 @@
   SimpleJekyllSearch({
     searchInput: searchInput,
     resultsContainer: document.getElementById('search-results-container'),
-    json: '{{site.url}}/search.json',
+    json: `${site.url}/search.json`,
     searchResultTemplate: [
       '<div class="search-result">',
-      '<h4><a href="{{site.url}}{url}">{category} > {title}</a></h4>',
+      `<h4><a href="${site.url}{url}">{category} > {title}</a></h4>`,
       '<p>{excerpt}</p>',
       '</div>'
     ].join('')
